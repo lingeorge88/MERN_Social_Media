@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { TbSocial } from "react-icons/tb";
+import { BsPeopleFill } from "react-icons/bs";
 import { ImConnection } from "react-icons/im";
 import { BsShare } from "react-icons/bs";
 import { AiOutlineInteraction } from "react-icons/ai";
 import { CustomButton, Loading, TextInput } from "../components";
 import { useForm } from "react-hook-form";
-import BgImg from "../assets/img.jpeg";
+import BgImg from "../assets/BG1.png";
 import { Link } from "react-router-dom";
 import { apiRequest } from "../utils";
 
@@ -55,10 +56,10 @@ const Register = () => {
         <div className='w-full lg:w-1/2 h-full px-6 lg:p-10 2xl:px-20 flex flex-col justify-center'>
           <div className='w-full flex gap-2 items-center mb-3 2xl:mb-6'>
             <div className='p-2 bg-[#065ad8] rounded text-white'>
-              <TbSocial />
+              <BsPeopleFill />
             </div>
             <span className='text-2xl text-[#065ad8] font-semibold'>
-              ShareFun
+              Social Village
             </span>
           </div>
           <p className='text-ascent-1 text-base font-semibold'>
@@ -180,8 +181,8 @@ const Register = () => {
           <div className='relative w-full flex  items-center justify-center'>
             <img
               src={BgImg}
-              alt='Bg Image'
-              className='w-48 2xl:w-64 h-48 2xl:h-64 rounded-full object-cover'
+              alt='Background'
+              className='w-64 2xl:w-80 h-64 2xl:h-80 rounded-full object-cover'
             />
             <div className='absolute flex items-center gap-1 bg-white right-10 top-10 py-2 px-5 rounded-full'>
               <BsShare size={14} />
@@ -199,7 +200,7 @@ const Register = () => {
 
           <div className='mt-16 text-center'>
             <p className='text-white text-base'>
-              Connect with friedns & have share for fun
+              Connect with friends and make new ones
             </p>
             <span className='text-sm text-white/80'>
               Share memories with friends and the world.

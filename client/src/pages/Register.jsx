@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { TbSocial } from "react-icons/tb";
-import { BsPeopleFill } from "react-icons/bs";
+import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 import { ImConnection } from "react-icons/im";
 import { BsShare } from "react-icons/bs";
 import { AiOutlineInteraction } from "react-icons/ai";
@@ -56,7 +55,7 @@ const Register = () => {
         <div className='w-full lg:w-1/2 h-full px-6 lg:p-10 2xl:px-20 flex flex-col justify-center'>
           <div className='w-full flex gap-2 items-center mb-3 2xl:mb-6'>
             <div className='p-2 bg-[#065ad8] rounded text-white'>
-              <BsPeopleFill />
+              <HiOutlineBuildingStorefront />
             </div>
             <span className='text-2xl text-[#065ad8] font-semibold'>
               Social Village

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { GiVillage } from "react-icons/gi";
-import { ImConnection } from "react-icons/im";
 import { BsShare } from "react-icons/bs";
-import { AiOutlineInteraction } from "react-icons/ai";
+import { FaRegHandshake } from "react-icons/fa";
+import { IoPeopleOutline } from "react-icons/io5";
 import { CustomButton, Loading, TextInput } from "../components";
 import { useForm } from "react-hook-form";
 import BgImg from "../assets/BG1.png";
@@ -205,11 +205,11 @@ const Register = () => {
               <span className='text-xs font-medium'>Share</span>
             </div>
             <div className='absolute flex items-center gap-1 bg-white left-10 top-6 py-2 px-5 rounded-full'>
-              <ImConnection />
+              <IoPeopleOutline  />
               <span className='text-xs font-medium'>Connect</span>
             </div>
             <div className='absolute flex items-center gap-1 bg-white left-12 bottom-6 py-2 px-5 rounded-full'>
-              <AiOutlineInteraction />
+              <FaRegHandshake  />
               <span className='text-xs font-medium'>Interact</span>
             </div>
           </div>

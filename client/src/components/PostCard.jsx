@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import { BiSolidLike, BiLike, BiComment } from "react-icons/bi";
-import { MdOutlineDeleteOutline } from "react-icons/md";
+import { MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { NoProfile } from "../assets";
 import TextInput from "./TextInput";
@@ -270,10 +270,10 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
 
         {user?._id === post?.userId?._id && (
           <div
-            className='flex gap-1 items-center text-base text-white cursor-pointer'
+            className='flex gap-1 items-center text-base cursor-pointer'
             onClick={() => deletePost(post?._id)}
           >
-            <MdOutlineDeleteOutline size={20} />
+            <MdOutlineDelete size={20} />
 
             <span className='hidden md:flex'>Delete</span>
           </div>

@@ -13,6 +13,7 @@ const Register = () => {
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+
   const {
     register,
     handleSubmit,
@@ -159,9 +160,20 @@ const Register = () => {
               </span>
             )}
 
-            {isSubmitting ? (
-              <Loading />
-            ) : (
+    {isSubmitting ? (
+      <>
+      <Loading />
+      <p className="text-ascent-2 text-sm text-center">
+      <Link
+          to='/login'
+          className='text-[#065ad8] font-semibold ml-2 cursor-pointer'
+        >
+        Login Here
+            </Link>
+            {" "}if registration is taking longer than expected...
+            </p>
+      </>
+    ) : (
               <CustomButton
                 type='submit'
                 containerStyles={`inline-flex justify-center rounded-md bg-blue px-8 py-3 text-sm font-medium text-white outline-none mt-5 2xl:mt-8`}

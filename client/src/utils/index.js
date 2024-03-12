@@ -18,7 +18,7 @@ export const apiRequest = async ({ url, token, data, method }) => {
         Authorization: token ? `Bearer ${token}` : "",
       },
     });
-
+    console.log(result);
     return result?.data;
   } catch (error) {
     const err = error.response.data;

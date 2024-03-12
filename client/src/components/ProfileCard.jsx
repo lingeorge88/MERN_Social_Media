@@ -77,9 +77,9 @@ const ProfileCard = ({ user }) => {
             <span className='text-ascent-1 text-lg'>{user?.views?.length}</span>
           </div>
 
-          <span className='text-base text-blue'>
+          {/* <span className='text-base text-blue'>
             {user?.verified ? "Verified Account" : "Not Verified"}
-          </span>
+          </span> */}
 
           <div className='flex items-center justify-between'>
             <span className='text-ascent-2'>Joined</span>

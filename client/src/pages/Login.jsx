@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { HiOutlineBuildingStorefront } from "react-icons/hi2";
+import { GiVillage } from "react-icons/gi";
+
 import { ImConnection } from "react-icons/im";
 import { BsShare } from "react-icons/bs";
 import { AiOutlineInteraction } from "react-icons/ai";
@@ -60,16 +61,16 @@ const Login = () => {
         <div className='w-full lg:w-1/2 h-full p-10 2xl:px-20 flex flex-col justify-center'>
           <div className='w-full flex gap-2 items-center mb-6'>
             <div className='p-2 bg-[#065ad8] rounded text-white'>
-              <HiOutlineBuildingStorefront />
+              <GiVillage />
             </div>
-            <span className='text-2xl text-[#065ad8] font-semibold'>
+            <span className='text-3xl text-[#065ad8] font-semibold'>
               Social Village
             </span>
           </div>
-          <p className='text-ascent-1 text-base font-semibold'>
+          <p className='text-ascent-1 text-lg font-semibold'>
             Log in to your account
           </p>
-          <span className='text-sm nt-2 text-ascent-2'>Welcome back,</span>
+          <span className='text-md nt-2 text-ascent-2'>Welcome back,</span>
 
           <form
             className='py-8 flex flex-col gap-5'
@@ -83,8 +84,8 @@ const Login = () => {
               register={register("email", {
                 required: "Email Address is required!",
               })}
-              styles='w-full rounded-full'
-              labelStyle='ml-2'
+              styles='w-full transition duration-200 ease-in-out focus:border-blue focus:border-2'
+              labelStyle='ml-2 font-bold text-lg'
               error={errors.email ? errors.email.message : ""}
             />
 
@@ -93,8 +94,8 @@ const Login = () => {
               label='Password'
               placeholder='Password'
               type='password'
-              styles='w-full rounded-full'
-              labelStyle='ml-2'
+              styles='w-full transition duration-200 ease-in-out focus:border-blue focus:border-2'
+              labelStyle='ml-2 font-bold text-lg'
               register={register("password", {
                 required: "Password is required!",
               })}
@@ -133,12 +134,12 @@ const Login = () => {
           </form>
 
           <p className='text-ascent-2 text-sm text-center'>
-            Don't have an account?{" "}
+            Don't have an account?{""}
             <Link
               to='/register'
               className='text-[#065ad8] font-semibold ml-2 cursor-pointer'
             >
-              Create Account
+              Create An Account
             </Link>
           </p>
         </div>

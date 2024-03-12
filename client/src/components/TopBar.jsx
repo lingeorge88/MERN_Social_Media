@@ -1,6 +1,6 @@
 import { TbSocial } from "react-icons/tb";
 import { BsMoon, BsSunFill, BsPeopleFill } from "react-icons/bs";
-import { HiOutlineBuildingStorefront } from "react-icons/hi2";
+import { GiVillage } from "react-icons/gi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
@@ -34,10 +34,10 @@ const TopBar = () => {
   };
 
   return (
-    <div className='topbar w-full flex items-center justify-between py-3 md:py-6 px-4 bg-primary'>
+    <div className='topbar w-full flex items-center justify-between py-3 md:py-6 px-4 bg-primary rounded-b-md'>
       <Link to='/' className='flex gap-2 items-center'>
         <div className='p-1 md:p-2 bg-[#065ad8] rounded text-white'>
-          <HiOutlineBuildingStorefront />
+          <GiVillage />
         </div>
         <span className='text-xl md:text-2xl text-[#065ad8] font-semibold'>
           Social Village

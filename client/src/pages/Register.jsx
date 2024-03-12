@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HiOutlineBuildingStorefront } from "react-icons/hi2";
+import { GiVillage } from "react-icons/gi";
 import { ImConnection } from "react-icons/im";
 import { BsShare } from "react-icons/bs";
 import { AiOutlineInteraction } from "react-icons/ai";
@@ -32,14 +32,14 @@ const Register = () => {
         data: data,
         method: "POST",
       });
-
-      if (res?.status === "failed") {
+      
+      if (res?.success === "failed") {
         setErrMsg(res);
       } else {
         setErrMsg(res);
         setInterval(() => {
           window.location.replace("/login");
-        }, 5000);
+        }, 2000);
       }
       setIsSubmitting(false);
     } catch (error) {
@@ -55,13 +55,13 @@ const Register = () => {
         <div className='w-full lg:w-1/2 h-full px-6 lg:p-10 2xl:px-20 flex flex-col justify-center'>
           <div className='w-full flex gap-2 items-center mb-3 2xl:mb-6'>
             <div className='p-2 bg-[#065ad8] rounded text-white'>
-              <HiOutlineBuildingStorefront />
+              <GiVillage />
             </div>
-            <span className='text-2xl text-[#065ad8] font-semibold'>
+            <span className='text-3xl text-[#065ad8] font-semibold'>
               Social Village
             </span>
           </div>
-          <p className='text-ascent-1 text-base font-semibold'>
+          <p className='text-ascent-1 text-lg font-semibold'>
             Create your account
           </p>
 
@@ -75,7 +75,8 @@ const Register = () => {
                 label='First Name'
                 placeholder='First Name'
                 type='text'
-                styles='w-full'
+                styles='w-full transition duration-200 ease-in-out focus:border-blue focus:border-2'
+                labelStyle='font-bold text-lg'
                 register={register("firstName", {
                   required: "First Name is required!",
                 })}
@@ -86,7 +87,8 @@ const Register = () => {
                 label='Last Name'
                 placeholder='Last Name'
                 type='lastName'
-                styles='w-full'
+                styles='w-full transition duration-200 ease-in-out focus:border-blue focus:border-2'
+                labelStyle='font-bold text-lg'
                 register={register("lastName", {
                   required: "Last Name do no match",
                 })}
@@ -99,10 +101,11 @@ const Register = () => {
               label='Email Address'
               placeholder='email@example.com'
               type='email'
+              labelStyle='font-bold text-lg'
               register={register("email", {
                 required: "Email Address is required!",
               })}
-              styles='w-full'
+              styles='w-full transition duration-200 ease-in-out focus:border-blue focus:border-2'
               error={errors.email ? errors.email.message : ""}
             />
 
@@ -112,7 +115,8 @@ const Register = () => {
                 label='Password'
                 placeholder='Password'
                 type='password'
-                styles='w-full'
+                styles='w-full transition duration-200 ease-in-out focus:border-blue focus:border-2'
+                labelStyle='font-bold text-lg'
                 register={register("password", {
                   required: "Password is required!",
                 })}
@@ -123,12 +127,13 @@ const Register = () => {
                 label='Confirm Password'
                 placeholder='Password'
                 type='password'
-                styles='w-full'
+                styles='w-full transition duration-200 ease-in-out focus:border-blue focus:border-2'
+                labelStyle='font-bold text-lg'
                 register={register("cPassword", {
                   validate: (value) => {
                     const { password } = getValues();
 
-                    if (password != value) {
+                    if (password !== value) {
                       return "Passwords do no match";
                     }
                   },
@@ -166,12 +171,12 @@ const Register = () => {
           </form>
 
           <p className='text-ascent-2 text-sm text-center'>
-            Already has an account?{" "}
+            Already have an account?{""}
             <Link
               to='/login'
               className='text-[#065ad8] font-semibold ml-2 cursor-pointer'
             >
-              Login
+              Login Here
             </Link>
           </p>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BsFiletypeGif, BsPersonFillAdd } from "react-icons/bs";
+import { BsFiletypeGif, BsPersonFillAdd, BsPersonFillDash } from "react-icons/bs";
 import {
   CustomButton,
   EditProfile,
@@ -40,7 +40,7 @@ const Home = () => {
   const { posts } = useSelector((state) => state.posts);
   const [friendRequest, setFriendRequest] = useState([]);
   const [suggestedFriends, setSuggestedFriends] = useState([]);
-
+  const [sentRequests, setSentRequests] = useState({});
   const [loading, setLoading] = useState(false);
   const [posting, setPosting] = useState(false);
   const [errMsg, setErrMsg] = useState("");
@@ -122,6 +122,7 @@ const Home = () => {
   const handleFriendRequest = async (id) => {
     try {
       const res = await sendFriendRequest(user.token, id);
+      setSentRequests(prev => ({ ...prev, [id]: true }));
       await fetchSuggestedFriends();
     } catch (error) {
       console.log(error);
@@ -220,18 +221,18 @@ const Home = () => {
                   <span>Image</span>
                 </label>
 
-                {/* <label
+                <label
                   className='flex items-center gap-1 text-base text-ascent-2 hover:text-ascent-1 cursor-pointer'
                   htmlFor='videoUpload'
                 >
-                  <input
+                  {/* <input
                     type='file'
                     data-max-size='5120'
                     onChange={(e) => setFile(e.target.files[0])}
                     className='hidden'
                     id='videoUpload'
                     accept='.mp4, .wav'
-                  />
+                  /> */}
                   <BiSolidVideo />
                   <span>Video</span>
                 </label>
@@ -250,7 +251,7 @@ const Home = () => {
                   />
                   <BsFiletypeGif />
                   <span>Gif</span>
-                </label> */}
+                </label>
 
                 {posting ? (
                   <Loading />
@@ -369,11 +370,17 @@ const Home = () => {
                     </Link>
 
                     <div className='flex gap-1'>
-                      <button
+                    <button
                         className='bg-[#0444a430] text-sm text-white p-1 rounded'
                         onClick={() => handleFriendRequest(friend?._id)}
                       >
-                        <BsPersonFillAdd size={20} className='text-[#0f52b6]' />
+                        {sentRequests[friend?._id]  ?
+              <CustomButton
+              title='Pending'
+              containerStyles='bg-[#0444a4] text-xs text-white px-1.5 py-1 rounded-full'
+            />:
+              <BsPersonFillAdd size={20} className='text-[#0f52b6]' />
+                    }
                       </button>
                     </div>
                   </div>
